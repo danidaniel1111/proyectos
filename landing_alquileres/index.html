@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./estilos/estilos.css">
+	<link rel="stylesheet" href="./estilos/estilo_filtros.css">
+	<title>Prueba Landing</title>
+	<!-- Leaflet CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+	<!-- Leaflet Draw CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+	<!-- Leaflet JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+	<!-- Leaflet Draw JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+</head>
+<body>
+	<div id="formulario">
+		<!-- Aqui van los botones -->
+		<div id="primera_zona">
+			<div id="zona_select_localizacion">
+				<div id="contenedor_botones_inicio">
+					<button id="modo_comprar">Comprar</button>
+					<button id="modo_alquilar">Alquilar</button>
+					<button id="modo_compartir">Compartir</button>
+				</div>
+				<div id="contenedor_select"></div>
+				
+				<label for="zona_usuario">Localizacion:</label>
+				<input type="text" id="zona_usuario" name="zona_usuario" placeholder="Escribe la zona a buscar" required list="zonas_sugeridas">
+				<datalist id="zonas_sugeridas">							<!--Input text que complementa la busqueda-->
+					<option value="Ocaña">
+					<option value="Toledo">
+					<option value="Aranjuez">
+				</datalist>
+				<div id="mensaje_error"></div>
+
+
+				<div id="zona_busquedas">
+					<button id ="busqueda">Busca Ya!</button>
+
+				</div>
+				<div id="clima"></div>
+
+			</div>
+
+			<div id="zona_mapa">
+				<div id="filtro_+_zona"></div>
+				<div id="zona_botones_funcionalidad">
+					<button id="modo_forma">Modo dibujo</button>
+					<div id="contenedor_filtros">
+					<button id="abrir_pop_up">Filtros</button> <!--Boton que activa el pop up-->
+					<div id="fondo_pop_up">
+					<div id="colocacion_boton">
+						<div id="pop_up">
+							<button id="cerrar_pop_up">X</button>
+							<div id="contenedor_boton">
+								<button id="buscar"><img src="./iconos/pag_principal/icono.svg" alt="Icono de busqueda"/>Buscar resultado</button>
+							</div>
+							<h2>Filtros</h2>
+							<div id="filtros_select">
+								<div id="filtros_transacción">
+									<div id="zona_transacción">
+										<label for="transaccion">Tipo de Transacción</label>
+										<select name="transaccion" id="transaccion">
+										  <option value="comprar">Comprar</option>
+										  <option value="alquilar">Alquilar</option>
+										  <option value="compartir">Compartir</option>
+										  <option value="alquiler_opcion_compra">Alquiler con opción de compra</option>
+										  <option value="trapaso">Traspaso</option>
+										</select>
+									</div>
+									<div id="zona_tipo_inmueble"></div>
+								</div>
+								<div id="zona_tipo_construccion"> <!-- 2 checkbox para ser si segunda mano u obra nueva-->
+									<div id="checkbox_segunda_mano">
+										<label for="segunda_mano">Segunda mano</label>
+										<input type="radio" id="segunda_mano" name="tipo_construccion" value="segunda_mano" class="radio_tipo_construccion">
+									</div>
+									<div id="checkbox_obra_nueva">
+										<label for="obra_nueva">Obra Nueva</label>
+										<input type="radio" id="obra_nueva" name="tipo_construccion" value="obra_nueva" class="radio_tipo_construccion">	
+									</div>					
+								</div> 
+							</div> <!-- Cierre filtros select-->
+							<h2>Precio</h2>
+							<div id="filtros_precio">
+
+								<div id="zona_precio_min">
+									<label for="precio_min">Precio Minimo</label>				
+									<input type="number" id="precio_min" name="precio_min" placeholder="Introduzca precio minimo" min="0" step="0.01">			<!-------NO ES OBLIGATORIO, CUIDADO AL COGER EL VALUE PARA CONSULTAS, NO TIENEN PORQUE ESTAR -->
+								</div>
+								<div id="zona_precio_max">
+									<label for="precio_max">Precio Máximo</label>				
+									<input type="number" id="precio_max" name="precio_max" placeholder="Introduzca precio máximo" min="0" step="0.01">
+								</div>			
+							</div>
+							<h2>Superficie (m2)</h2>
+							<div id="filtros_superficie">
+								<div id="zona_superficie_minima">
+									<label for="superficie_minima">Minima</label>
+									<select name="superficie_minima" id="superficie_minima">
+										<option value="no_superficie_minima">No importa</option>
+										<option value="60">60 m2</option>
+										<option value="80">80 m2</option>
+										<option value="100">100 m2</option>
+										<option value="120">120 m2</option>
+										<option value="140">140 m2</option>
+										<option value="160">160 m2</option>	
+										<option value="180">180 m2</option>	
+										<option value="200">200 m2</option>
+										<option value="220">220 m2</option>
+										<option value="230">mas de 220 m2</option>
+									</select>	
+								</div>	
+								<div id="zona_superficie_maxima">
+									<label for="superficie_maxima">Máxima</label>
+									<select name="superficie_maxima" id="superficie_maxima">
+										<option value="no_superficie_maxima">No importa</option>
+										<option value="60">60 m2</option>
+										<option value="80">80 m2</option>
+										<option value="100">100 m2</option>
+										<option value="120">120 m2</option>
+										<option value="140">140 m2</option>
+										<option value="160">160 m2</option>	
+										<option value="180">180 m2</option>	
+										<option value="200">200 m2</option>
+										<option value="220">220 m2</option>
+										<option value="230">mas de 220 m2</option>
+									</select>
+								</div>
+							</div>
+							<h2 id="titulo_filtros_viviendas">Tipo de vivienda</h2>
+							<div id="filtros_tipo_vivienda">
+								<div id="contenedor_todos_pisos"> 
+									<div class="grupo_checks_general">
+										<label for="todos_pisos_selector_general">Todos los pisos</label><input type="checkbox" name="todos_pisos_selector_general" id="todos_pisos_selector_general" class="check_vivienda_todos" value="">
+									</div>
+									<div class="grupo_checks">
+										<label for="pisos_plantas_intermedias">Plantas intermedias</label>	<input type="checkbox" name="pisos_plantas_intermedias" id="pisos_plantas_intermedias" class="filtro_checkbox_vivienda checkbox_pisos" value="pisos_plantas_intermedias">				
+										<label for="pisos_apartamento">Apartamento</label>	<input type="checkbox" name="pisos_apartamento" id="pisos_apartamento" class="filtro_checkbox_vivienda checkbox_pisos" value="pisos_apartamento">				
+										<label for="pisos_atico">Ático</label><input type="checkbox" name="pisos_atico" id="pisos_atico" class="filtro_checkbox_vivienda checkbox_pisos" value="pisos_atico">
+									</div>
+									<div class="grupo_checks">
+										<label for="pisos_duplex">Duplex</label><input type="checkbox" name="pisos_duplex" id="pisos_duplex" class="filtro_checkbox_vivienda checkbox_pisos" value="pisos_duplex">						
+										<label for="pisos_loft">Loft</label><input type="checkbox" name="pisos_loft" id="pisos_loft" class="filtro_checkbox_vivienda checkbox_pisos" value="pisos_loft">
+										<label for="pisos_planta_baja">Planta baja</label><input type="checkbox" name="pisos_planta_baja" id="pisos_planta_baja" class="filtro_checkbox_vivienda checkbox_pisos" value="pisos_planta_baja">
+										<label for="pisos_estudio">Estudio</label><input type="checkbox" name="pisos_estudio" id="pisos_estudio" class="filtro_checkbox_vivienda checkbox_pisos" value="pisos_estudio">
+									</div>					
+								</div> 
+								<div id="contenedor_todas_casas">
+									<div class="grupo_checks_general">				
+										<label for="todas_casas_selector_general">Todas las casas</label><input type="checkbox" name="todas_casas_selector_general" id="todas_casas_selector_general" class="check_vivienda_todos" value="">
+									</div>
+									<div class="grupo_checks">
+										<label for="casa_chalet">Casa o Chalet</label><input type="checkbox" name="casa_chalet" id="casa_chalet" class="filtro_checkbox_vivienda checkbox_casas" value="casa_chalet">					
+										<label for="casa_finca_rustica">Finca rústica</label><input type="checkbox" name="casa_finca_rustica" id="casa_finca_rustica" class="filtro_checkbox_vivienda checkbox_casas" value="casa_finca_rustica">					
+										<label for="casa_adosada">Casa adosada</label><input type="checkbox" name="casa_adosada" id="casa_adosada" class="filtro_checkbox_vivienda checkbox_casas" value="casa_adosada">
+									</div>					
+								</div>																	
+							</div>
+							<div id="filtros_habitaciones_baños">
+								<h2>Habitaciones</h2>
+								<div id="contenedor_botones_habitaciones">
+									<button class="boton_habitaciones boton_filtrado" value="0">Indiferente</button>
+									<button class="boton_habitaciones boton_filtrado" value="1">1</button>
+									<button class="boton_habitaciones boton_filtrado" value="2">2</button>
+									<button class="boton_habitaciones boton_filtrado" value="3">3</button>
+									<button class="boton_habitaciones boton_filtrado" value="4">4</button>
+								</div>
+								<h2>Baños</h2>
+								<div id="contenedor_botones_baños">
+									<button class="boton_baños boton_filtrado" value="0">Indiferente</button>
+									<button class="boton_baños boton_filtrado" value="1">1</button>
+									<button class="boton_baños boton_filtrado" value="2">2</button>
+									<button class="boton_baños boton_filtrado" value="3">3</button>
+									<button class="boton_baños boton_filtrado" value="4">4</button>
+								</div>				
+							</div>
+							<h2 id="titulo_filtros_extras">Extras</h2>
+							<div id="filtros_extras">
+								<div class="grupo_extras">
+									<button class="boton_extras" value="ascensor"><img src="./iconos/extras/ascensor.svg" alt="icono ascensor"/>Ascensor</button>
+									<button class="boton_extras" value="amueblado"><img src="./iconos/extras/amueblado.svg" alt="icono amueblado"/>Amueblado</button>
+									<button class="boton_extras" value="parking"><img src="./iconos/extras/parking.svg" alt="icono parking"/>Parking</button>
+									<button class="boton_extras" value="piscina"><img src="./iconos/extras/piscina.svg" alt="icono piscina"/>Piscina</button>
+								</div>
+								<div class="grupo_extras">
+									<button class="boton_extras" value="terraza"><img src="./iconos/extras/terraza.svg" alt="icono terraza"/>Terraza</button>
+									<button class="boton_extras" value="balcon"><img src="./iconos/extras/balcon.svg" alt="icono balcon"/>Balcón</button>
+									<button class="boton_extras" value="calefaccion"><img src="./iconos/extras/calefaccion.svg" alt="icono calefaccion"/>Calefaccion</button>
+									<button class="boton_extras" value="trastero"><img src="./iconos/extras/trastero.svg" alt="icono trastero"/>Trastero</button>
+								</div>
+								<div class="grupo_extras">
+									<button class="boton_extras" value="jardin"><img src="./iconos/extras/jardin.svg" alt="icono ascensor"/>Jardín</button>
+									<button class="boton_extras" value="aire_acondicionado"><img src="./iconos/extras/aire.svg" alt="icono aire"/>Aire acondicionado</button>
+									<button class="boton_extras" value="electrodomesticos"><img src="./iconos/extras/electro.svg" alt="icono electro"/>Electrodomesticos</button>
+								<div class="grupo_extras">
+									<button class="boton_extras" value="mascotas"><img src="./iconos/extras/mascotas.svg" alt="icono mascotas"/>Admiten mascotas</button>
+								</div>
+								</div>
+							</div>
+							<h2>Fechas de publicación</h2>
+							<div id="zona_fechas_boton">
+								<div id="filtros_fecha">
+									<div class="grupo_fechas_boton">
+										<label for="filtro_fecha_indiferente">Indiferente</label> <input type="radio" name="checkbox_fecha" id="filtro_fecha_indiferente" class="checkbox_filtro_fecha" value="indiferente"> 
+										<label for="filtro_fecha_48_h">Últimas 48 horas</label><input type="radio" name="checkbox_fecha" id="filtro_fecha_48_h" class="checkbox_filtro_fecha" value="48_h">
+									</div>
+									<div class="grupo_fechas_boton">
+										<label for="filtro_fecha_7_d">Última semana</label><input type="radio" name="checkbox_fecha" id="filtro_fecha_7_d" class="checkbox_filtro_fecha" value="7_d">
+										<label for="filtro_fecha_1_m">Último mes</label><input type="radio" name="checkbox_fecha" id="filtro_fecha_1_m" class="checkbox_filtro_fecha" value="1_m">
+									</div>					
+								</div>
+							</div>
+
+								
+						</div><!--Cierre contenedor filtros-->
+		<div id="contenedor_boton_abajo"></div>	
+		</div>	
+            
+
+			
+		</div>
+	</div> <!--Cierre contenedor filtros-->
+					<button id="calculo_hipoteca">Calculo de hipoteca</button>
+				</div>
+				<div id="mapa"></div>
+
+			</div>
+
+			
+			
+		</div>
+		<div id="segunda_zona">
+			<div id="ultima_busqueda"><h3>Últimas búsquedas</h3></div>
+			<div id="vecindario"></div>
+		</div>
+
+		
+	</div> <!-- Cierre formulario -->
+
+<script src="./js/index.js"></script>
+<script src="./js/prueba_filtros.js"></script>
+
+
+</body>
+</html>

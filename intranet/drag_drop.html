@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Drag and Drop</title>
+	<link rel="stylesheet" href="./estilos/drag_drop.css">
+
+</head>
+<body>
+<div class="contenedor_subida">
+  <h2>Sube las imágenes del piso</h2>
+  <div id="errores_drag_drop"></div>
+  <div id="zona_arrastre" class="zona_arrastre">
+    <p>Arrastra y suelta las imágenes aquí o haz clic para seleccionarlas.</p>
+    <input type="file" id="input_archivos" multiple accept="image/*" hidden>
+  </div>
+  <div id="vista_previa"></div>
+  <button id="boton_subir">Subir Imágenes</button>
+</div>
+<script src="./js/drag_drop.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Cálculo de Hipoteca</title>
+	<link rel="stylesheet" href="./estilos/estilo_general.css">
+
+</head>
+<body>
+	<div id="contenedor_login">
+		<div id="grupo_usuario">
+			<label for="usuario_login">Usuario</label>
+			<input type="text" id="usuario_login" name="usuario_login" placeholder="Introduzca aquí su usuario" required>
+			<div id="error_usuario"></div>
+		</div>
+		<div id="grupo_pass">
+			<label for="pass_login">Contraseña</label>
+			<input type="password" id="pass_login" name="pass_login" placeholder="Introduzca aquí su contraseña" required>
+			<div id="error_pass"></div>
+			<!--
+				Tenga una longitud mínima (por ejemplo, 8 caracteres).
+				Contenga al menos una letra mayúscula.
+				Contenga al menos una letra minúscula.
+				Contenga al menos un número.
+				Contenga al menos un carácter especial (por ejemplo: !@#$%^&*).			
+			-->
+		</div>
+		<div id="grupo_botones">
+			<button id="verificar_login">Iniciar Sesión</button>
+			<button id="borrar_login">Borrar Datos</button>
+		</div>
+	</div> <!--Cierre de contenedor login-->
+	<script src="./js/inicio_sesion.js"></script>
+</body>
+</html>
+
+
+

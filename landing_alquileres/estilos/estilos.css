@@ -1,0 +1,430 @@
+
+/* Estilos generales para los iconos de los marcadores */
+.icono-mark {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de hover para dar interacción visual */
+.icono-mark:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para los restaurantes */
+.marcador_restaurant .icono-mark {
+    background-color: #FF6347; /* Tomate */
+    color: white;
+}
+
+/* Estilos para los bancos */
+.marcador_bank .icono-mark {
+    background-color: #4682B4; /* Azul */
+    color: white;
+}
+
+/* Estilos para cafeterías */
+.marcador_cafe .icono-mark {
+    background-color: #8B4513; /* Marrón */
+    color: white;
+}
+
+/* Estilos para bares */
+.marcador_bar .icono-mark {
+    background-color: #800000; /* Rojo oscuro */
+    color: white;
+}
+
+/* Estilos para hospitales */
+.marcador_hospital .icono-mark {
+    background-color: #FF0000; /* Rojo brillante */
+    color: white;
+}
+
+/* Estilos para escuelas */
+.marcador_school .icono-mark {
+    background-color: #FFD700; /* Amarillo */
+    color: white;
+}
+
+/* Estilos para supermercados */
+.marcador_supermarket .icono-mark {
+    background-color: #228B22; /* Verde */
+    color: white;
+}
+
+/* Estilos para parques */
+.marcador_park .icono-mark {
+    background-color: #32CD32; /* Verde claro */
+    color: white;
+}
+
+/* Estilos para hoteles */
+.marcador_hotel .icono-mark {
+    background-color: #8A2BE2; /* Violeta */
+    color: white;
+}
+
+/* Estilos para veterinarios */
+.marcador_veterinary .icono-mark {
+    background-color: #D2691E; /* Marrón claro */
+    color: white;
+}
+
+/* Estilos para pubs */
+.marcador_pub .icono-mark {
+    background-color: #800080; /* Púrpura */
+    color: white;
+}
+
+/* Estilos para clínicas */
+.marcador_clinic .icono-mark {
+    background-color: #00FA9A; /* Verde */
+    color: white;
+}
+
+/* Estilos para lugares de culto */
+.marcador_place_of_worship .icono-mark {
+    background-color: #FFD700; /* Amarillo */
+    color: white;
+}
+
+/* Estilos para escuelas de música */
+.marcador_music_school .icono-mark {
+    background-color: #9932CC; /* Morado */
+    color: white;
+}
+
+/* Estilos para discotecas */
+.marcador_nightclub .icono-mark {
+    background-color: #DC143C; /* Rojo */
+    color: white;
+}
+
+/* Estilos para teatros */
+.marcador_theatre .icono-mark {
+    background-color: #FF1493; /* Rosa */
+    color: white;
+}
+
+/* Estilos para farmacias */
+.marcador_pharmacy .icono-mark {
+    background-color: #7CFC00; /* Verde lima */
+    color: white;
+}
+
+/* Estilos para aparcamientos */
+.marcador_parking .icono-mark {
+    background-color: #A9A9A9; /* Gris */
+    color: white;
+}
+
+/* Estilos para librerías */
+.marcador_library .icono-mark {
+    background-color: #D3D3D3; /* Gris claro */
+    color: white;
+}
+
+/* Estilos para dentistas */
+.marcador_dentist .icono-mark {
+    background-color: #FF8C00; /* Naranja */
+    color: white;
+}
+
+/* Estilos para comida rápida */
+.marcador_fast_food .icono-mark {
+    background-color: #FFD700; /* Amarillo */
+    color: white;
+}
+
+/* Estilos para ayuntamientos */
+.marcador_townhall .icono-mark {
+    background-color: #B22222; /* Rojo ladrillo */
+    color: white;
+}
+
+
+
+#formulario {
+    display: flex;
+    flex-direction: column; /* Mantiene la estructura en columna */
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+
+  
+    /*flex-wrap: wrap;  Permite que los elementos se ajusten si no caben */
+
+}
+
+
+
+#primera_zona {
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos en esta zona estén en fila */
+    gap: 70px; /* Ajusta el espacio entre elementos */
+    width: 100%; /* Ocupa todo el ancho disponible */
+	flex-wrap: wrap; /* Permite que se ajusten si no caben en una línea */
+    justify-content: center; /* Espacio entre los elementos para distribuirlos */
+}
+#segunda_zona{
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos en esta zona estén en fila */
+    gap: 50px; /* Ajusta el espacio entre elementos */
+    width: 100%; /* Ocupa todo el ancho disponible */
+	flex-wrap: wrap; /* Permite que se ajusten si no caben en una línea */
+    justify-content: center; /* Espacio entre los elementos para distribuirlos */	
+}
+
+#zona_select_localizacion {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Espacio entre los elementos internos */
+	height: auto;
+	width: 20%; /* Establecemos el ancho como un porcentaje de la ventana */
+    max-width: 670px; /* Aseguramos que no crezca más allá de 691px */
+    height: auto; /* Ajusta la altura según el contenido */
+    max-height: 80vh; /* Asegura que la altura no sea mayor al 80% de la ventana */
+	flex-wrap: wrap;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+#zona_mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 50%; /* Ocupa el 60% del espacio en la fila */
+    height: auto;
+	flex-wrap: wrap;
+}
+
+
+
+#mapa {
+	display: block;
+    margin: 20px auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 100%;
+    min-width: 300px; /* Asegura que el mapa tenga un ancho mínimo */
+    height: 50vh; /* Usa un porcentaje de la altura de la ventana */
+    min-height: 400px; /* Asegura que el mapa tenga una altura mínima */
+    max-height: 80vh; /* Evita que el mapa se haga demasiado grande */
+    max-width: 100%; /* Asegura que no exceda el tamaño del contenedor */
+}
+
+#zona_botones_funcionalidad {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+	gap: 20px;
+}
+
+#contenedor_botones_inicio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+#zona_busquedas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    position: relative;
+    height: auto;
+}
+
+#busqueda {
+    display: none;
+}
+@media (max-width: 1552px) {
+    #primera_zona {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar elementos */
+    }
+
+    #zona_mapa {
+        order: -1; /* Mover el mapa al principio */
+        width: 100%; /* Asegurar que ocupe todo el ancho */
+        margin-bottom: 20px; /* Añadir espacio debajo */
+    }
+
+    #zona_select_localizacion {
+        width: 100%; /* Asegurar que ocupa todo el ancho */
+        max-width: none; /* Remover limitación de ancho máximo */
+    }
+	
+	#segunda_zona{
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar elementos */		
+	}
+
+	#zona_usuario{
+		width: 50%;
+		
+	}
+}
+
+
+#segunda_zona {
+    display: flex; /* Activa flexbox */
+    flex-direction: row; /* Elementos en fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 20px; /* Espacio entre los elementos */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    height: 100%; /* Ajusta al contenedor padre */
+    box-sizing: border-box; /* Incluye padding y borde en las dimensiones */
+}
+
+#ultima_busqueda {
+    flex: 1; /* Permite que tome espacio disponible */
+    max-width: 45%; /* Limita el ancho máximo */
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Centra el contenido de texto dentro */
+    overflow-y: auto; /* Habilita desplazamiento si el contenido excede */
+	display: none;
+}
+
+#vecindario {
+    flex: 1; /* Permite que tome espacio disponible */
+    max-width: 45%; /* Limita el ancho máximo */
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Centra el contenido de texto dentro */
+    overflow-y: auto; /* Habilita desplazamiento si el contenido excede */
+}
+
+button {
+    background-color: #012E67;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #A0A0A0;
+    transform: scale(1.1);
+}
+
+
+input[type="text"] {
+    border: 2px solid #A0A0A0;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #012E67;
+    box-shadow: 0 0 10px rgba(1, 46, 103, 0.5);
+    outline: none;
+}
+
+/* ==== Efectos para marcadores del mapa ==== */
+
+.icono-mark {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icono-mark:hover {
+    transform: rotate(10deg) scale(1.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* ==== Sombras y bordes ==== */
+#mapa {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #012E67;
+}
+
+#zona_botones_funcionalidad button {
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+/* ==== Animación clave para entrada de elementos ==== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación a los contenedores visibles */
+#formulario > div {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+select {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 10px;
+  font-size: 16px;
+  color: #012E67; /* Color del texto */
+  background-color: white; /* Fondo blanco */
+  border: 2px solid #012E67; /* Borde azul oscuro */
+  border-radius: 8px; /* Bordes redondeados */
+  appearance: none; /* Quitar estilo predeterminado */
+  -webkit-appearance: none; /* Para navegadores WebKit */
+  -moz-appearance: none; /* Para navegadores Gecko */
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #777777; /* Borde gris al enfocar */
+  box-shadow: 0 0 4px #012E67; /* Sombra sutil */
+}
+
+select option {
+  color: #012E67; /* Color del texto de las opciones */
+  background-color: white; /* Fondo de las opciones */
+}
+
+select:hover {
+  background-color: #f8f8f8; /* Fondo gris claro al pasar el ratón */
+  border-color: #555555; /* Borde gris oscuro al pasar el ratón */
+}
+
+
+/* ==== Estilo para encabezados ==== */
+h3, h4 {
+    font-family: Arial, sans-serif;
+    color: #012E67;
+    border-bottom: 2px solid #A0A0A0;
+    padding-bottom: 5px;
+}
+

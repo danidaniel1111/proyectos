@@ -1,0 +1,57 @@
+#imagen_subir_texto{
+	width: 100px;
+	height: 100px;
+	
+}
+    /* Estilo del contenedor */
+    #zona_usuario {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Animación al hacer hover en el contenedor */
+    #zona_usuario:hover {
+      transform: translateY(-10px); /* Elevar el contenedor */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    }
+
+    /* Texto dentro del contenedor */
+    #texto_subir_pisos p {
+      margin: 5px 0;
+      font-size: 1rem;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    /* Cambio de color al texto al hacer hover */
+    #zona_usuario:hover #texto_subir_pisos p {
+      color: #007BFF; /* Azul destacado */
+    }
+
+    /* Imagen dentro del contenedor */
+    #imagen_subir_texto {
+      width: 80px;
+      height: 80px;
+      margin-top: 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    /* Zoom y mejora de colores en la imagen al hacer hover */
+    #zona_usuario:hover #imagen_subir_texto {
+      transform: scale(1.2);  /*Ampliar imagen */
+      filter: brightness(1.2) contrast(1.1); /* Resaltar colores */
+    }
+	
+	/*--------------------- */
+	
+	

@@ -1,0 +1,154 @@
+/* Contenedor del área de arrastrar y soltar */
+#errores_validar{
+	display: none;
+}
+#contenido_subida{
+	display: flex;
+	gap: 50px;	
+	align-items: center;
+	margin-left:10%;
+	margin-right:10%;
+	flex-wrap: wrap;
+
+}
+#titulo_subida{
+		margin-bottom:50px;
+}
+#area_arrastrar_soltar {
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #6c757d;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.animacion_boton_archivos{
+	animation: pulsar 1s infinite alternate; /* Animación de pulsación para destacar más */
+	
+}
+
+/* Cambiar estilos cuando el área está activa */
+#zona_arrastre{
+  width: 100%;
+  height: auto;
+}
+
+
+#zona_arrastre.arrastrando {
+  background-color: #e9ecef;
+  color: #495057;
+
+}
+
+/* Estilo de las imágenes en la vista previa */
+#vista_previa .imagen_vista_previa {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+.icono_eliminar{
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s;
+	
+}
+.icono_eliminar:hover {
+  content: url('./iconos/form_subir_pisos/eliminar_fotos_activado.svg'); /* Cambia el contenido de la imagen */
+}
+
+/* Escala las imágenes al pasar el ratón */
+#vista_previa img:hover {
+  transform: scale(1.1);
+}
+
+/* Contenedor de la vista previa */
+#vista_previa {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#boton_subir {
+  background-color: #012E67; /* Color principal del botón */
+  color: #fff; /* Texto blanco */
+  border: 2px solid #A0A0A0; /* Borde gris para un contraste suave */
+  border-radius: 8px; /* Bordes redondeados para un efecto más suave */
+  padding: 12px 30px; /* Espaciado ajustado */
+  font-size: 18px; /* Fuente un poco más grande para hacerlo más visible */
+  font-weight: bold; /* Texto en negrita para llamar más la atención */
+  cursor: pointer; /* Cambio a puntero al pasar el ratón */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s; /* Transiciones más fluidas */
+  
+  width: 50%;  /* El contenedor tiene un ancho del 50% */
+  margin-left: 25%;  /* Margen automático a la izquierda */
+  margin-right: auto; /* Margen automático a la derecha */
+  margin-top: 30px;
+  
+
+}
+
+/* Efecto cuando el botón está en hover */
+#boton_subir:hover {
+  background-color: #A0A0A0; /* Color gris en hover para un cambio visible */
+  border-color: #012E67; /* Cambiar el borde a color primario */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+}
+
+#errores_drag_drop {
+	display: none;
+    background-color: #FFF5F5; /* Fondo rojo suave */
+    border: 1px solid #FF4C4C; /* Borde rojo */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+	max-width: 600px; /* Ancho máximo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo de la lista desordenada */
+#errores_drag_drop ul {
+    list-style-type: none; /* Sin viñetas por defecto */
+    padding: 0; /* Sin espacio interno */
+    margin: 0; /* Sin margen externo */
+}
+
+/* Estilo de los elementos de la lista */
+#errores_drag_drop li {
+    background-color: #FFEBEB; /* Fondo más claro para los errores individuales */
+    color: #FF0000; /* Texto rojo para errores */
+    font-size: 16px; /* Tamaño de fuente */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 10px; /* Separación entre errores */
+    border-radius: 3px; /* Bordes redondeados */
+    display: flex; /* Para alinear icono y texto */
+    align-items: center; /* Centrar icono verticalmente */
+}
+
+/* Icono de advertencia al inicio del error */
+#errores_drag_drop li::before {
+    content: '⚠️'; /* Icono de advertencia */
+    font-size: 20px; /* Tamaño del icono */
+    margin-right: 10px; /* Espaciado entre icono y texto */
+    color: #FF0000; /* Color del icono */
+}
+
+/* Animación de pulsación */
+@keyframes pulsar {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+
+
+
+	
+	

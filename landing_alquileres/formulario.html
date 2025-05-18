@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Cálculo de Hipoteca</title>
+	<link rel="stylesheet" href="./estilos/estilos_form.css">
+
+</head>
+<body>
+    <div class="contenedor_form">
+		<div class="fondo_h1">
+			<h1>Simulador de Hipoteca</h1>
+		</div>
+        <div id="simulador-hipoteca">
+            <!-- Monto del préstamo -->
+            <div class="grupo_input">
+                <label for="monto">Monto del préstamo (en €):</label>
+                <input type="number" id="monto" name="monto" placeholder="Ej. 150000" required>
+            </div>
+
+            <!-- Plazo de la hipoteca -->
+            <div class="grupo_input">
+                <label for="plazo">Plazo de la hipoteca (en años):</label>
+                <input type="number" id="plazo" name="plazo" placeholder="Ej. 30" min="1" required>
+            </div>
+
+            <!-- Tasa de interés -->
+            <div class="grupo_input">
+                <label for="interes">Tasa de interés anual (%):</label>
+                <input type="number" id="interes" name="interes" placeholder="Ej. 3.5" step="0.01" min="0" required>
+            </div>
+
+            <!-- Tipo de interés -->
+            <div class="grupo_input">
+                <label for="tipo_interes">Tipo de interés:</label>
+                <select id="tipo_interes" name="tipo-interes">
+                    <option value="fijo">Fijo</option>
+                    <option value="variable">Variable</option>
+                    <option value="mixto">Mixto</option>
+                </select>
+            </div>
+
+            <!-- Cuota inicial -->
+            <div class="grupo_input">
+                <label for="cuota_inicial">Cuota inicial (en €):</label>
+                <input type="number" id="cuota_inicial" name="cuota_inicial" placeholder="Ej. 20000" min="0">
+            </div>
+
+            <!-- Porcentaje de entrada -->
+            <div class="grupo_input">
+                <label for="porcentaje_entrada">Porcentaje de entrada (%): <span id="porcentaje_entrada_value"></span></label>
+                <input type="range" id="porcentaje_entrada" name="porcentaje_entrada" min="0" max="100" value="20" step="1">
+
+            </div>
+
+            <!-- Botón para calcular -->
+			<div id="zona_botones_hipoteca">
+				<button id="calcular_hipoteca">Calcular Hipoteca</button>
+				<button id="calcular_hipoteca">Volver Atrás</button>
+			</div>
+			<div id="resultado_simulador"></div>
+        </div>
+    </div>
+	<script src="./js/formulario.js"></script>
+</body>
+</html>
+
+
+
+

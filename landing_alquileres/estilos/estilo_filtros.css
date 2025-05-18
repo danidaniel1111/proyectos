@@ -1,0 +1,612 @@
+
+
+/* Contenedor general para el checkbox */
+.check_vivienda_todos {
+    display: none; /* Ocultamos el checkbox para personalizarlo */
+}
+
+/* Personalización del estilo del label */
+label[for="todos_pisos_selector_general"], label[for="todas_casas_selector_general"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #012E67;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(1, 46, 103, 0.2); /* Sombra con tu color principal */
+}
+
+/* Efecto hover para resaltar */
+label[for="todos_pisos_selector_general"]:hover, label[for="todas_casas_selector_general"]:hover {
+    background-color: #A0A0A0;
+    color: #012E67;
+    transform: scale(1.05); /* Pequeño aumento en tamaño */
+}
+
+/* Checkbox marcado: cambia el color del label */
+.check_vivienda_todos:checked + label{
+    background-color: white;
+    color: #012E67;
+    box-shadow: 0 0 10px rgba(1, 46, 103, 0.5);
+}
+
+/* Personalización opcional del tamaño del checkbox (antes de ocultarlo) */
+input[type="checkbox"].check_vivienda_todos {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#buscar {
+    display: flex;
+    align-items: center;    /* Centra el contenido (el icono y el texto) dentro del botón */
+    gap: 10px;              /* Espacio entre el icono y el texto */
+}
+
+
+button img {
+	 width: 20px; 
+	 height: 20px;
+	 margin-right:10px;
+}
+#titulo_filtros_viviendas, #titulo_filtros_extras{
+	display: flex;
+	
+}
+#fondo_pop_up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparencia */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que el fondo esté por encima de otros elementos */
+}
+
+#zona_tipo_construccion{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;	
+	
+}
+#filtros_tipo_vivienda{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: flex-start;	
+}
+#filtros_select{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;	
+}
+#filtros_superficie {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#filtros_habitaciones_baños{
+	display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#contenedor_todos_pisos, #contenedor_todas_casas{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;	
+}
+
+ 
+.grupo_checks{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.grupo_checks_general{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+	
+}
+
+
+#contenedor_botones_habitaciones,#contenedor_botones_baños{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;	
+	
+}
+
+/* CERRAR POP UP */
+#cerrar_pop_up {
+    position: sticky;
+    top: 0px;
+    right: 5px;
+    left: 100%;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* CONTENEDOR BOTON */
+#contenedor_boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#filtros_transacción{
+	
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;	
+}
+
+/* ZONA DE FILTROS Y TRANSACCIONES */
+#zona_tipo_inmueble,#zona_transacción , #filtros_precio {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* ZONA PRECIO MIN Y MAX */
+#zona_precio_min, #zona_precio_max {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+#zona_precio_min input, #zona_precio_max input {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* ZONA DE SUPERFICIE */
+#zona_superficie_minima, #zona_superficie_maxima {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+#zona_superficie_minima select, #zona_superficie_maxima select {
+    width: 100%;
+    max-width: 200px;
+    min-width: 120px;
+}
+/* Filtros extras */
+#filtros_extras {
+    display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 10px;
+}
+ 
+#filtros_fecha{
+    display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 20px;	 
+}
+
+.grupo_fechas_boton{
+    display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 10px;	 
+ }
+ 
+.grupo_extras{
+    display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 10px;
+}
+
+
+
+
+/* Estilos cuando el botón está activo */
+.boton_h_b_activo {
+    border: 2px solid blue;
+    background-color: #003366;
+    color: white;
+}
+
+.boton_extra_activo {
+    background-color: #012E67 !important;
+    color: white !important;
+    border: 2px solid blue !important;
+	box-shadow: 0 0 10px rgba(0, 0, 255, 0.5) !important;
+}
+
+
+
+#pop_up {
+    display: flex;
+    position: relative;
+	flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2000 !important;
+    /*width: 691px;*/
+    /*height: 608px;*/
+    width: 80vw; /* Establecemos el ancho como un porcentaje de la ventana  80 */ 
+    max-width: 670px; /* Aseguramos que no crezca más allá de 670px */
+    height: auto; /* Ajusta la altura según el contenido */
+    max-height: 80vh; /* Asegura que la altura no sea mayor al 80% de la ventana */
+	overflow-y: auto;
+	gap: 30px;
+    
+}
+
+/* Media query para pantallas de tamaño tablet y más pequeñas (max-width: 768px) */
+@media (max-width: 768px) {
+    #pop_up {
+        width: 90vw; /* Ajusta el ancho al 90% del ancho de la ventana */
+        max-width: 600px; /* Limita el ancho máximo a 600px */
+        max-height: 70vh; /* Limita la altura a un 70% de la ventana */
+    }
+}
+
+/* Media query para pantallas de móviles pequeños (max-width: 480px) */
+@media (max-width: 480px) {
+    #pop_up {
+        width: 95vw; /* Ajusta el ancho al 95% del ancho de la ventana */
+        max-width: 100%; /* Permite que ocupe el 100% del ancho disponible */
+        max-height: 60vh; /* Limita la altura a un 60% de la ventana */
+    }
+}
+
+#contenedor_boton_abajo {
+    display: flex;
+    justify-content: center; /* Centra el contenedor en el centro */
+    align-items: center;     /* Centra verticalmente */
+    margin-top: 30px;        /* Margen superior para separarlo de los filtros */
+}
+
+/*
+@media (max-width: 1200px) {
+    #filtros_tipo_vivienda {
+        flex-direction: column;
+    }
+    #zona_transacción, #zona_tipo_inmueble {
+        flex-direction: column;
+    }
+    .boton_extras {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    #contenedor_boton_abajo {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #filtros_tipo_vivienda {
+        flex-direction: column;
+    }
+    #zona_transacción, #zona_tipo_inmueble {
+        flex-direction: column;
+    }
+    .boton_extras {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    #contenedor_boton_abajo {
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 16px; 
+    }
+    #cerrar_pop_up {
+        width: 20px;
+        height: 20px;
+    }
+    #contenedor_todos_pisos, #contenedor_todas_casas {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    #filtros_tipo_vivienda {
+        flex-direction: column;
+    }
+    #zona_transacción, #zona_tipo_inmueble {
+        flex-direction: column;
+    }
+    .boton_extras {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+    #cerrar_pop_up {
+        width: 20px;
+        height: 20px;
+    }
+    #contenedor_todos_pisos, #contenedor_todas_casas {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+*/
+
+
+
+/* ESTILOS ADICIONALES */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #012E67;
+    background-color: #F8F9FA;
+    margin: 0;
+    padding: 0;
+}
+
+/* BOTONES */
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #A0A0A0;
+    background-color: #012E67;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* CONTENEDORES */
+#contenedor_filtros {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* POP-UP */
+#pop_up {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* BOTONES FILTRADO */
+.boton_filtrado {
+    background-color: #A0A0A0;
+    color: #012E67;
+    border: 2px solid #012E67;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.boton_filtrado:hover {
+    background-color: #012E67;
+    color: #FFFFFF;
+    transform: scale(1.1);
+}
+
+/* H2 ESTILOS */
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #012E67;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* INPUTS */
+input, select {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #A0A0A0;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #012E67;
+    box-shadow: 0 0 5px rgba(1, 46, 103, 0.5);
+}
+
+/* EXTRA */
+.boton_extra_activo {
+    animation: bounce 2s infinite;
+}
+
+/* SCROLL */
+#pop_up::-webkit-scrollbar {
+    width: 8px;
+}
+
+#pop_up::-webkit-scrollbar-thumb {
+    background: #012E67;
+    border-radius: 10px;
+}
+
+#pop_up::-webkit-scrollbar-thumb:hover {
+    background: #A0A0A0;
+}
+
+
+/* 1. CENTRAR LA "X" EN EL BOTÓN DE CIERRE */
+#cerrar_pop_up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+/* 2. DIFERENCIAR CHECKBOX GENERALES */
+.check_vivienda_todos {
+    font-weight: bold;
+    background-color: #012E67;
+    color: white;
+    border: 1px solid #A0A0A0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.check_vivienda_todos:hover {
+    background-color: #A0A0A0;
+    color: #012E67;
+    cursor: pointer;
+}
+
+/* 3. BOTONES DE HABITACIONES Y BAÑOS */
+.boton_habitaciones, .boton_baños {
+    background-color: #A0A0A0;
+    color: white;
+    border: 2px solid #012E67;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton_habitaciones:hover, .boton_baños:hover {
+    background-color: #012E67;
+    transform: scale(1.05);
+}
+
+.boton_habitaciones.boton_h_b_activo, .boton_baños.boton_h_b_activo {
+    background-color: #012E67;
+    color: white;
+    border: 2px solid #A0A0A0;
+    box-shadow: 0 0 10px rgba(1, 46, 103, 0.5);
+    transform: scale(1.1);
+}
+
+/* 4. ESTILO MEJORADO PARA BOTONES DE EXTRAS NO PULSADOS */
+.boton_extras {
+    background-color: #F5F5F5;
+    color: #012E67;
+    border: 1px solid #A0A0A0;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+
+.boton_extras.boton_h_b_activo{
+    background-color: #012E67;
+    color: white;
+    border: 2px solid #A0A0A0;
+    box-shadow: 0 0 10px rgba(1, 46, 103, 0.5);
+   
+}
+
+select {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 10px;
+  font-size: 16px;
+  color: #012E67; /* Color del texto */
+  background-color: white; /* Fondo blanco */
+  border: 2px solid #012E67; /* Borde azul oscuro */
+  border-radius: 8px; /* Bordes redondeados */
+  appearance: none; /* Quitar estilo predeterminado */
+  -webkit-appearance: none; /* Para navegadores WebKit */
+  -moz-appearance: none; /* Para navegadores Gecko */
+  cursor: pointer;
+}

@@ -1,0 +1,358 @@
+/* Estilo base para el contenedor del formulario */
+
+
+.contenedor_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el formulario verticalmente */
+    align-items: center; /* Centra el formulario horizontalmente */
+    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    width: 100%; /* Asegura que el contenedor se ajuste al tamaño de la pantalla */
+    padding: 20px;
+    /*box-shadow: 0 4px 8px rgba(1, 46 , 103, 0.5);*/
+    border-radius: 8px;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centra el formulario en la página */
+	gap: 50px;
+	
+}
+
+
+
+.fondo_h1 {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    width: 110%;
+    height: 100px; /* Ocupa toda la altura disponible del contenedor padre */
+    background-color: #012E67; /* Fondo azul */
+    text-align: center; /* Centra el texto dentro del h1 */
+}
+
+.fondo_h1 h1 {
+    font-size: 32px; /* Tamaño de la fuente */
+    color: #fff; /* Color del texto */
+    margin: 0; /* Elimina los márgenes del h1 */
+    padding: 20px 0; /* Espacio arriba y abajo del título */
+    transition: font-size 0.3s ease; /* Transición suave al cambiar el tamaño */
+}
+
+
+#zona_botones_hipoteca {
+    display: flex;             /* Activa el modelo Flexbox */
+    justify-content: center;   /* Centra los botones horizontalmente */
+    align-items: center;       /* Centra los botones verticalmente */
+    gap: 10px;                 /* Espacio entre los botones (opcional) */
+
+}
+/* Estilos para los elementos del formulario */
+#simulador-hipoteca {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacio entre los elementos */
+    padding: 20px;
+    width: 100%;
+	height: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .contenedor_form {
+        padding: 15px; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .fondo_h1 h1 {
+        font-size: 24px; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .contenedor_form {
+        padding: 10px; /* Reduce aún más el padding en pantallas más pequeñas */
+    }
+
+    .fondo_h1 h1 {
+        font-size: 20px; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+}
+
+
+
+
+
+
+/* Efecto de hover para el contenedor del formulario */
+.contenedor_form:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(1, 46, 103, 0.3); /*Sombre color azul indigo*/
+	
+
+}
+
+
+
+
+
+
+/* Grupo de cada input */
+.grupo_input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Estilo para etiquetas */
+.grupo_input label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #012E67;
+    transition: color 0.3s ease; /* Transición de color */
+}
+
+/* Estilo para inputs y select */
+.grupo_input input,
+.grupo_input select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Transición para bordes y fondo */
+}
+
+/* Estilo para inputs y select en estado de foco */
+.grupo_input input:focus,
+.grupo_input select:focus {
+    border-color: #007bff;
+    background-color: #f7faff;
+    outline: none;
+}
+
+/* Estilo del botón */
+#calcular_hipoteca {
+    padding: 12px 20px;
+    background-color: #012E67;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición para el color y el desplazamiento */
+}
+
+#calcular_hipoteca:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Estilo del resultado */
+
+#resultado_simulador.hidden {
+    opacity: 0; /* Oculta el resultado */
+}
+
+/* Estilo para el contenedor de los resultados */
+
+#resultado_simulador {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    background-color: #E0E0E0; /* Fondo azul */
+    border: 1px solid #A0A0A0;/* Borde sutil alrededor */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-size: 18px; /* Tamaño de la fuente */
+	text-align: center; /* Centrado del texto */
+	width: 80%; /* Ocupa el 80% del ancho disponible */
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; /* Centrado en la página */
+}
+
+
+/* Estilo para el título dentro de los resultados */
+#resultado_simulador p {
+    font-size: 22px; /* Tamaño de fuente para el título */
+    color: #012E67; /* Color azul */
+    margin-bottom: 15px; /* Espacio debajo del título */
+	font-family: 'Arial', sans-serif; /* Fuente legible */
+}
+
+
+
+/* Estilo para dispositivos pequeños */
+@media (max-width: 768px) {
+    .contenedor_form {
+        padding: 15px;
+    }
+
+    .contenedor_form h1 {
+        font-size: 20px;
+    }
+
+    .grupo_input label {
+        font-size: 14px;
+    }
+
+    .grupo_input input,
+    .grupo_input select {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    #calcular_hipoteca {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    #resultado_simulador {
+        font-size: 14px;
+    }
+}
+
+/* Estilo para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .contenedor_form {
+        margin: 0 10px; /* Reduce márgenes laterales */
+    }
+
+    .grupo_input label {
+        font-size: 12px;
+    }
+
+    .grupo_input input,
+    .grupo_input select {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    #calcular_hipoteca {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    #resultado_simulador {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ESTILOS ADICIONALES PARA EL FORMULARIO */
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #012E67;
+    background-color: #F8F9FA;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado del formulario */
+.fondo_h1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.fondo_h1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #012E67, #0056b3);
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.fondo_h1 h1 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Inputs y selects */
+.grupo_input input, .grupo_input select {
+    background-color: #F7F9FC;
+    border: 1px solid #A0A0A0;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.grupo_input input:focus, .grupo_input select:focus {
+    border-color: #012E67;
+    background-color: #E8F1FA;
+    box-shadow: 0 0 5px rgba(1, 46, 103, 0.5);
+}
+
+/* Botón de acción */
+#calcular_hipoteca {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#calcular_hipoteca:hover {
+    background: linear-gradient(45deg, #012E67, #A0A0A0);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de resultados */
+#resultado_simulador {
+    background: linear-gradient(90deg, #E8F1FA, #FFFFFF);
+    border-left: 4px solid #012E67;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Títulos en resultados */
+#resultado_simulador p {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="en"> <!-- Establece el idioma principal del contenido como inglés -->
+<head>
+  <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive en móviles -->
+	<link rel="stylesheet" href="./estilos/estilo_general.css"> <!-- Vincula una hoja de estilo general -->
+	<link rel="stylesheet" href="./estilos/drag_drop.css"> <!-- Vincula una hoja de estilo específica para drag and drop -->
+  <title>Formulario con Barra de Progreso</title> <!-- Título que se muestra en la pestaña del navegador -->
+</head>
+<body>
+
+  <h1>Subida de pisos</h1> <!-- Encabezado principal del formulario -->
+
+  <div id="contenedor_subir_pisos"> <!-- Contenedor principal del formulario -->
+
+			<!-- Botón para mostrar/ocultar sección de filtros -->
+			<button class="toggle_button" data-target="filtros_select" id="boton_desplegar_filtros">Filtros</button>
+
+			<!-- Contenedor de filtros principales -->
+			<div id="filtros_select" class="seccion_filtro">
+
+				<div id="filtros_transacción"> <!-- Filtro para tipo de transacción -->
+					<div id="zona_transacción">
+						<label for="subir_piso_transaccion">Tipo de Transacción</label>
+						<select name="subir_piso_transaccion" id="subir_piso_transaccion">
+						  <option value="comprar">Comprar</option>
+						  <option value="alquilar">Alquilar</option>
+						  <option value="compartir">Compartir</option>
+						  <option value="alquiler_opcion_compra">Alquiler con opción de compra</option>
+						  <option value="trapaso">Traspaso</option>
+						</select>
+
+						<div id="subir_piso_tipo_inmueble"></div> <!-- Contenedor dinámico para tipo de inmueble -->
+					</div>
+				</div>
+
+				<div id="subir_piso_tipo_construccion"> <!-- Filtros para tipo de construcción -->
+					<div id="subir_piso_checkbox_segunda_mano">
+						<label for="segunda_mano">Segunda mano</label>
+						<input type="radio" id="subir_piso_segunda_mano" name="tipo_construccion" value="segunda_mano" class="radio_tipo_construccion">
+					</div>
+					<div id="subir_piso_checkbox_obra_nueva">
+						<label for="obra_nueva">Obra Nueva</label>
+						<input type="radio" id="subir_piso_obra_nueva" name="tipo_construccion" value="obra_nueva" class="radio_tipo_construccion">	
+					</div>					
+				</div> 
+			</div> <!-- Cierre filtros select -->
+
+			<!-- Botón y sección para el filtro de precio -->
+			<button class="toggle_button" data-target="filtros_precio" id="boton_desplegar_precio">Precio</button>
+			<div id="filtros_precio" class="seccion_filtro">
+				<div id="zona_precio_subir_piso">
+					<label for="precio_subir_vivienda">Precio</label>				
+					<input type="number" id="precio_subir_vivienda" name="precio_subir_vivienda" placeholder="€" min="0" step="0.01">			
+				</div>
+			</div>
+
+			<!-- Botón y sección para el filtro de superficie -->
+			<button class="toggle_button" data-target="filtros_superficie" id="boton_desplegar_superficie">Superficie</button>
+			<div id="filtros_superficie" class="seccion_filtro">
+				<div id="subir_piso_zona_superficie">
+					<label for="superficie_subir_vivienda">Superficie</label>				
+					<input type="number" id="superficie_subir_vivienda" name="superficie_subir_vivienda" placeholder="m2" min="0" step="0.01">	
+				</div>
+			</div>
+
+			<!-- Botón y sección para el filtro de tipo de vivienda -->
+			<button class="toggle_button" data-target="filtros_tipo_vivienda" id="boton_desplegar_vivienda">Tipo Vivienda</button>
+			<div id="filtros_tipo_vivienda" class="seccion_filtro">
+				<div id="contenedor_todos_pisos"> 
+					<div class="grupo_checks_general"> <!-- Checkboxes para Piso o Casa -->
+						<label for="tipo_piso_subir_vivienda">Piso</label><input type="checkbox" name="tipo_piso_subir_vivienda" id="tipo_piso_subir_vivienda" class="check_vivienda_todos" value="">
+						<label for="tipo_casa_subir_vivienda">Casa</label><input type="checkbox" name="tipo_casa_subir_vivienda" id="tipo_casa_subir_vivienda" class="check_vivienda_todos" value="">
+					</div>
+					<div id="contenedor_select_tipo_vivienda"> <!-- Contenedor para selects dinámicos -->
+						<div id="contenedor_titulo"></div>
+						<div id="contenedor_select"></div>
+					</div>
+				</div> 
+			</div>
+
+			<!-- Botón y sección para habitaciones y baños -->
+			<button class="toggle_button" data-target="filtros_habitaciones_baños" id="boton_desplegar_h_b">Habitaciones y Baños </button>
+			<div id="filtros_habitaciones_baños" class="seccion_filtro">
+				<h2>Habitaciones</h2>
+				<div id="boton_sumar_habitaciones"> <!-- Controles para aumentar/disminuir habitaciones -->
+					<div id="restar_habitaciones_subir_vivienda">
+						<button id="restar_habitacion_boton" class="boton_restar">-</button>
+					</div>
+					<div id="input_habitaciones_subir_vivienda">
+						<div id="habitaciones_subir_vivienda"><p>0</p></div>	
+					</div>
+					<div id="sumar_habitaciones_subir_vivienda">
+						<button id="sumar_habitacion_boton" class="boton_sumar">+</button>
+					</div>
+				</div>
+
+				<h2>Baños</h2>
+				<div id="boton_sumar_baños"> <!-- Controles para aumentar/disminuir baños -->
+					<div id="restar_baños_subir_vivienda">
+						<button id="restar_baño_boton" class="boton_restar">-</button>
+					</div>
+					<div id="contenedor_baños_subir_vivienda">
+						<div id="baños_subir_vivienda"><p>0</p></div>	
+					</div>
+					<div id="sumar_baños_subir_vivienda">
+						<button id="sumar_baño_boton" class="boton_sumar">+</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Botón y sección para extras -->
+			<button class="toggle_button" data-target="filtros_extras" id="boton_desplegar_filtros_extras">Extras</button>
+			<div id="filtros_extras" class="seccion_filtro">
+				<!-- Grupo 1 de extras -->
+				<div class="grupo_extras">
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_ascensor">Ascensor</label><input type="checkbox" name="extras_subir_vivienda_ascensor" id="extras_subir_vivienda_ascensor" class="subir_piso_extras" value="ascensor">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_amueblado">Amueblado</label><input type="checkbox" name="extras_subir_vivienda_amueblado" id="extras_subir_vivienda_amueblado" class="subir_piso_extras" value="amueblado">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_parking">Parking</label><input type="checkbox" name="extras_subir_vivienda_parking" id="extras_subir_vivienda_parking" class="subir_piso_extras" value="parking">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_piscina">Piscina</label><input type="checkbox" name="extras_subir_vivienda_piscina" id="extras_subir_vivienda_piscina" class="subir_piso_extras" value="piscina">
+					</div>
+				</div>
+
+				<!-- Grupo 2 de extras -->
+				<div class="grupo_extras">
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_terraza">Terraza</label><input type="checkbox" name="extras_subir_vivienda_terraza" id="extras_subir_vivienda_terraza" class="subir_piso_extras" value="terraza">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_balcon">Balcón</label><input type="checkbox" name="extras_subir_vivienda_balcon" id="extras_subir_vivienda_balcon" class="subir_piso_extras" value="balcon">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_calefaccion">Calefacción</label><input type="checkbox" name="extras_subir_vivienda_calefaccion" id="extras_subir_vivienda_calefaccion" class="subir_piso_extras" value="calefaccion">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_trastero">Trastero</label><input type="checkbox" name="extras_subir_vivienda_trastero" id="extras_subir_vivienda_trastero" class="subir_piso_extras" value="trastero">
+					</div>
+				</div>
+
+				<!-- Grupo 3 de extras -->
+				<div class="grupo_extras">
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_jardin">Jardín</label><input type="checkbox" name="extras_subir_vivienda_jardin" id="extras_subir_vivienda_jardin" class="subir_piso_extras" value="jardin">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_aire_acondicionado">Aire Acondicionado</label><input type="checkbox" name="extras_subir_vivienda_aire_acondicionado" id="extras_subir_vivienda_aire_acondicionado" class="subir_piso_extras" value="aire_acondicionado">
+					</div>
+					<div class="conjunto_extra">
+						<label for="extras_subir_vivienda_aire_electrodomesticos">Electrodomesticos</label><input type="checkbox" name="extras_subir_vivienda_aire_electrodomesticos" id="extras_subir_vivienda_aire_electrodomesticos" class="subir_piso_extras" value="electrodomesticos">
+					</div>
+					<div class="grupo_extras">
+						<div class="conjunto_extra">
+							<label for="extras_subir_vivienda_mascotas">Mascotas</label><input type="checkbox" name="extras_subir_vivienda_mascotas" id="extras_subir_vivienda_mascotas" class="subir_piso_extras" value="mascotas">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sección de subida de imágenes -->
+			<div class="contenedor_subida">
+			  <h2 id="titulo_subida">Sube las imágenes del piso</h2>
+			  <div id="contenido_subida">
+				  <div id="errores_drag_drop"></div> <!-- Para mostrar errores de subida -->
+				  <div id="zona_arrastre" class="zona_arrastre"> <!-- Área de drag and drop -->
+					<p>Arrastra y suelta las imágenes aquí o haz clic para seleccionarlas.</p>
+					<input type="file" id="input_archivos" multiple accept="image/*" hidden> <!-- Input oculto para seleccionar archivos -->
+				  </div>
+			  </div>
+			  <div id="vista_previa"></div> <!-- Aquí se mostrarán las imágenes previas -->
+			  <button id="boton_subir"><img src="./iconos/form_subir_pisos/subida_archivos.svg" alt="Icono Subida" id="icono_subida">Publicar Anuncio</button>
+			</div>
+  </div> <!-- Cierre contenedor pisos -->
+
+<!-- Scripts necesarios para la funcionalidad -->
+<script src="./js/formulario_subir_pisos.js"></script>
+<script src="./js/drag_drop.js"></script>
+
+</body>
+</html>

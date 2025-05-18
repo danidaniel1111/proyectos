@@ -1,0 +1,345 @@
+/* Estilos generales aplicables a todas las páginas */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FA;
+    color: #012E67;
+}
+.seccion_filtro{
+	display:none;
+	
+}
+button img {
+	 width: 20px; 
+	 height: 20px;
+	 margin-right:10px;
+
+}
+
+#filtros_select,#filtros_precio,#filtros_superficie,#filtros_tipo_vivienda,.contenedor_subida{
+	gap: 50px;	
+	align-items: center;
+	margin-left:10%;
+	margin-right:10%;
+	flex-wrap: wrap;
+	flex-direction: column;	
+}
+#filtros_select{
+	flex-direction: row;	
+}
+#zona_precio_subir_piso,#subir_piso_zona_superficie{
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+}
+
+#filtros_habitaciones_baños{
+	flex-direction: column;	
+	margin-left:10%;
+	margin-right:10%;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+
+#boton_sumar_habitaciones, #boton_sumar_baños {
+    display: flex; 
+    flex-direction: row; 
+    gap: 10px; 
+	justify-content: center;
+}
+
+#habitaciones_subir_vivienda,#baños_subir_vivienda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-top: 25%;
+    width: 30px; 
+    height: 30px; 
+}
+label{
+	display: block;
+    margin-bottom: 1em;
+}
+#subir_piso_tipo_construccion{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+#contenedor_todos_pisos{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.grupo_checks_general{
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+    align-items: center;
+	gap: 20px;	
+}
+
+.check_vivienda_todos{
+	display: flex;
+	width: auto;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+#filtros_extras{
+	gap: 20px;	
+	align-items: center;
+	margin-left:10%;
+	margin-right:10%;
+	flex-wrap: wrap;
+	flex-direction: column;	
+}
+.grupo_extras{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+.conjunto_extra{
+
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+
+}
+.subir_piso_extras{
+		
+	width: auto;
+	height: auto;	
+}
+
+
+
+
+
+h1 {
+    font-size: 2rem;
+    color: #012E67;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #012E67;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #A0A0A0;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+button {
+    background-color: #012E67;
+    color: white;
+    border: 2px solid #A0A0A0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /*margin: 10px 0;*/
+}
+
+button:hover {
+    background-color: #A0A0A0;
+    color: #012E67;
+    transform: scale(1.05);
+}
+
+input[type="text"], input[type="password"], input[type="number"], select {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #A0A0A0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #012E67;
+    box-shadow: 0 0 5px rgba(1, 46, 103, 0.5);
+}
+
+/* Estilos para pag_principal.html */
+#zona_usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px;
+}
+
+#zona_usuario p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#imagen_subir_texto {
+    width: 150px;
+    height: auto;
+    margin: 20px;
+}
+
+/* Estilos para inicio_sesion.html */
+#contenedor_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#grupo_usuario, #grupo_pass, #grupo_botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#grupo_botones {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Estilos para subir_pisos.html */
+#contenedor_subir_pisos {
+	display: flex;
+	flex-direction: column;
+
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	gap: 20px;
+	
+}
+
+.toggle_button {
+    display: block;
+	 background: linear-gradient(to right, #012E67, #70adfb); 
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+
+}
+
+.toggle_button:hover {
+    background-color: #A0A0A0;
+    color: #ffffff;
+    transform: scale(1.02);
+}
+
+#zona_arrastre {
+    width: 100%;
+    max-width: 500px;
+    height: 150px;
+    border: 2px dashed #012E67;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #012E67;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+#zona_arrastre:hover {
+    background-color: #F0F8FF;
+}
+
+#vista_previa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.vista_previa img {
+    width: 100px;
+    height: auto;
+    border: 2px solid #012E67;
+    border-radius: 5px;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    input, select {
+        font-size: 0.9rem;
+    }
+
+    #zona_arrastre {
+        height: 120px;
+    }
+	#filtros_select,#filtros_precio,#filtros_superficie,#filtros_tipo_vivienda,#filtros_extras{
+		gap: 20px;	
+	}
+	select{
+		width: 100%;
+		max-width:200px;		
+	}
+	#filtros_select{
+		flex-direction: row;	
+	}
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+
+    input, select {
+        font-size: 0.8rem;
+    }
+
+    #zona_arrastre {
+        height: 100px;
+    }
+	#filtros_select{
+		flex-direction: row;	
+	}
+
+}
