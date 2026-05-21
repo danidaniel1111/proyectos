@@ -1,7 +1,7 @@
 let usuario;
 let pass;
 
-// Asigna eventos a los botones solo cuando la página esté completamente cargada
+
 function asignarEventos() { 
     if (document.readyState == 'complete'){
         document.getElementById("borrar_login").addEventListener("click", borrar_datos_login);
@@ -16,13 +16,11 @@ function borrar_datos_login(){
         input_valor.value = "";
     });
 
-    // Comentario sugerido: también deberías vaciar las variables globales usuario y pass aquí
-    // Ejemplo: usuario = ""; pass = "";
+ 
 }
 
 function verificar_datos_login(){
-    // Comentario sugerido: Esta función valida los datos del login y si son válidos crea una cookie
-    // Nota: en una implementación real, la validación y la creación de la cookie debería hacerse del lado del servidor
+
 
     let valido_usuario = false;
     let valido_pass = false;
@@ -43,7 +41,7 @@ function verificar_datos_login(){
     const patron_usu = /^[a-zA-Z0-9_]+$/; // Letras, números y guiones bajos
     const patron_pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{10,}$/;
 
-    // Comentario sugerido: Aquí puedes personalizar más los mensajes de error según qué parte del patrón falla
+    
 
     // Validación del usuario
     if (usuario_limpio.length == 0) {
