@@ -1,4 +1,4 @@
-// Obtener referencias a los elementos del DOM
+
 const zona_arrastre = document.getElementById('zona_arrastre');
 const input_archivos = document.getElementById('input_archivos');
 const vista_previa = document.getElementById('vista_previa');
@@ -6,7 +6,7 @@ const boton_subir = document.getElementById('boton_subir');
 let contenedor_errores_validar = document.getElementById("errores_drag_drop");
 let archivos = [];
 
-// Asignar eventos cuando la página esté completamente cargada
+
 function asignarEventos() {
     if (document.readyState == 'complete') {
         zona_arrastre.addEventListener('dragover', modo_arrastrar); // Detectar que se está arrastrando
